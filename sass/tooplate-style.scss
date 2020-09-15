@@ -18,19 +18,8 @@ $text-white: #ffffff;
 $dark-mode-color: #252525;
 $main-color: #adcaff;
 
-$baby-blue-eyes: #adcaff;
-$french-sky-blue: #85afff;
-$periwinkle-crayola: #c2d7ff;
-
-$keppel: #26b6a6;
-$turquoise: #46d8c7;
-$celeste: #bcf1eb;
-
-$charcoal: #33535f;
-$blue-green: #6096a9;
-$columbia-blue: #bdd4db;
-
-$hint-of-green: #e6ffe8;
+$light-main: #bdffcd;
+$dark-main: #8882d4;
 
 $border-color: #f2f2f1;
 $button-color: #474559;
@@ -44,6 +33,10 @@ $link-font-size: 16px;
 
 body {
   font-family: $font-base;
+}
+
+* {
+  transition: background-color 0.5s ease;
 }
 
 .full-screen {
@@ -142,7 +135,7 @@ strong {
   height: 100%;
   svg {
     stroke: none;
-    fill: darken($color: $hint-of-green, $amount: 5);
+    fill: $light-main;
   }
 }
 
@@ -183,7 +176,7 @@ strong {
 }
 
 .animated-item {
-  color: $french-sky-blue;
+  color: $dark-main;
   line-height: inherit;
   display: block;
   opacity: 0;
@@ -245,7 +238,7 @@ strong {
 
   &[class*="-pinned"] {
     transform: translate(0, 0);
-    background-color: darken($color: $hint-of-green, $amount: 5);
+    background-color: $light-main;
   }
 
   &[class*="headroom--not-top"] {
@@ -293,7 +286,7 @@ strong {
   position: absolute;
   top: 0;
   right: -85vw;
-  background-color: lighten($color: $baby-blue-eyes, $amount: 10);
+  background-color: lighten($color: $dark-main, $amount: 15);
   box-shadow: -13px 0px 59px -50px rgba(0, 0, 0, 1);
   height: 100vh;
   width: 85vw;
@@ -317,7 +310,7 @@ strong {
   background: $dark-mode-color;
   #wave {
     svg {
-      fill: darken($color: $french-sky-blue, $amount: 10);
+      fill: $dark-main;
     }
   }
   .navbar-light .navbar-nav .nav-link {
@@ -331,7 +324,7 @@ strong {
       // box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.12);
       border-bottom: none;
     }
-    background-color: darken($color: $french-sky-blue, $amount: 10);
+    background-color: $dark-main;
   }
   .navbar {
     &[class*="headroom--not-top"] {
@@ -347,14 +340,13 @@ strong {
   #side-bar {
     background-color: lighten($color: $dark-mode-color, $amount: 8);
   }
+  #menu {
+    svg {
+      color: $border-color;
+    }
+  }
   .animated-item {
-    color: $celeste;
-    &:nth-child(2n + 2) {
-      color: $celeste;
-    }
-    &:nth-child(3n + 3) {
-      color: $celeste;
-    }
+    color: darken($color: $light-main, $amount: 13);
   }
   .about-text {
     p {

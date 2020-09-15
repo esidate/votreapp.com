@@ -3,6 +3,11 @@ body {
   font-family: "Maven Pro", sans-serif;
 }
 
+* {
+  -webkit-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
 .full-screen {
   padding: 8rem 0;
 }
@@ -107,7 +112,7 @@ strong {
 
 #wave svg {
   stroke: none;
-  fill: #cdffd1;
+  fill: #bdffcd;
 }
 
 .custom-btn {
@@ -150,7 +155,7 @@ strong {
 }
 
 .animated-item {
-  color: #85afff;
+  color: #8882d4;
   line-height: inherit;
   display: block;
   opacity: 0;
@@ -258,7 +263,7 @@ strong {
 .navbar[class*="-pinned"] {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  background-color: #cdffd1;
+  background-color: #bdffcd;
 }
 
 .navbar[class*="headroom--not-top"] {
@@ -297,7 +302,7 @@ strong {
   position: absolute;
   top: 0;
   right: -85vw;
-  background-color: #e0ebff;
+  background-color: #bebbe8;
   -webkit-box-shadow: -13px 0px 59px -50px black;
           box-shadow: -13px 0px 59px -50px black;
   height: 100vh;
@@ -328,7 +333,7 @@ strong {
 }
 
 .dark-mode #wave svg {
-  fill: #528eff;
+  fill: #8882d4;
 }
 
 .dark-mode .navbar-light .navbar-nav .nav-link:hover {
@@ -336,7 +341,7 @@ strong {
 }
 
 .dark-mode .navbar {
-  background-color: #528eff;
+  background-color: #8882d4;
 }
 
 .dark-mode .navbar[class*="headroom--not-top"] {
@@ -357,16 +362,12 @@ strong {
   background-color: #393939;
 }
 
+.dark-mode #menu svg {
+  color: #f2f2f1;
+}
+
 .dark-mode .animated-item {
-  color: #bcf1eb;
-}
-
-.dark-mode .animated-item:nth-child(2n + 2) {
-  color: #bcf1eb;
-}
-
-.dark-mode .animated-item:nth-child(3n + 3) {
-  color: #bcf1eb;
+  color: #7bff9b;
 }
 
 .dark-mode .about-text p {
