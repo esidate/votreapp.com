@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <link rel="stylesheet" href="sass/tooplate-style.css">
-   <base href="/votreapp/">
 </head>
 
 <body>
@@ -141,7 +140,7 @@
 
           <div class="col-lg-6 col-md-12 col-12">
             <div class="about-image svg my-5">
-              <img id="svg-about" src="images/undraw/svg_light.svg" class="img-fluid" alt="svg image">
+              <img id="svg-about" onload="this.src = dirname(document.location.href) + 'images/undraw/svg_light.svg'" class="img-fluid" alt="svg image">
             </div>
           </div>
 

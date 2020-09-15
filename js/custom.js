@@ -1,12 +1,18 @@
-(function () {
-  /* =================== HELPERS =================== */
-  function _(x) {
-    return document.querySelector(x);
-  }
-  function __(x) {
-    return document.querySelectorAll(x);
-  }
+/* =================== HELPERS =================== */
 
+function _(x) {
+  return document.querySelector(x);
+}
+
+function __(x) {
+  return document.querySelectorAll(x);
+}
+
+function dirname(path) {
+  return path.match(/.*\//);
+}
+
+(function () {
   /* =================== HEADER =================== */
   var headroom = new Headroom(_("#navbar"));
   headroom.init();
@@ -34,7 +40,8 @@
     _("body").classList.add("dark-mode");
     _("#sun").style.display = "inline";
     _("#moon").style.display = "none";
-    _("#svg-about").src = "/images/undraw/svg_dark.svg";
+    _("#svg-about").src =
+      dirname(document.location.href) + "images/undraw/svg_dark.svg";
     localStorage.setItem("theme", "dark");
   }
 
@@ -42,7 +49,8 @@
     _("body").classList.remove("dark-mode");
     _("#sun").style.display = "none";
     _("#moon").style.display = "inline";
-    _("#svg-about").src = "/images/undraw/svg_light.svg";
+    _("#svg-about").src =
+      dirname(document.location.href) + "images/undraw/svg_light.svg";
     localStorage.setItem("theme", "light");
   }
 
