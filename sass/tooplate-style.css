@@ -112,7 +112,7 @@ strong {
 
 #wave svg {
   stroke: none;
-  fill: #bdffcd;
+  fill: #b6ecc3;
 }
 
 .custom-btn {
@@ -263,7 +263,7 @@ strong {
 .navbar[class*="-pinned"] {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  background-color: #bdffcd;
+  background-color: #b6ecc3;
 }
 
 .navbar[class*="headroom--not-top"] {
@@ -367,7 +367,7 @@ strong {
 }
 
 .dark-mode .animated-item {
-  color: #7bff9b;
+  color: #a1e7b3;
 }
 
 .dark-mode .about-text p {

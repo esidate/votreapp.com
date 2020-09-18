@@ -18,7 +18,7 @@ $text-white: #ffffff;
 $dark-mode-color: #252525;
 $main-color: #adcaff;
 
-$light-main: #bdffcd;
+$light-main: #8de2a2;
 $dark-main: #8882d4;
 
 $border-color: #f2f2f1;
@@ -135,7 +135,7 @@ strong {
   height: 100%;
   svg {
     stroke: none;
-    fill: $light-main;
+    fill: lighten($color: $light-main, $amount: 10);
   }
 }
 
@@ -238,7 +238,7 @@ strong {
 
   &[class*="-pinned"] {
     transform: translate(0, 0);
-    background-color: $light-main;
+    background-color: lighten($color: $light-main, $amount: 10);
   }
 
   &[class*="headroom--not-top"] {
@@ -346,7 +346,7 @@ strong {
     }
   }
   .animated-item {
-    color: darken($color: $light-main, $amount: 13);
+    color: lighten($color: $light-main, $amount: 5);
   }
   .about-text {
     p {
