@@ -43,17 +43,12 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav d-none d-md-flex">
-          <div class="ml-lg-5 d-flex justify-content-center justify-items-center">
-            <div class="d-lg-flex justify-content-center align-items-center transition mt-1" id="theme-button">
-              <span class="iconify h3 mt-2" id="moon" data-icon="clarity:moon-solid" data-inline="false"></span>
-              <span class="iconify h3 mt-2" id="sun" style="display: none;" data-icon="heroicons-solid:sun"
-                data-inline="false"></span>
-              <span class="ml-2 font-weight-bold d-none d-lg-flex">Theme</span>
-            </div>
-          </div>
-        </ul>
-
+        <div class="ml-lg-5 d-lg-flex justify-content-center align-items-center transition theme-button">
+          <span class="iconify h3 mt-2 moon" data-icon="clarity:moon-solid" data-inline="false"></span>
+          <span class="iconify h3 mt-2 sun" style="display: none;" data-icon="heroicons-solid:sun"
+            data-inline="false"></span>
+          <span class="ml-2 font-weight-bold">Theme</span>
+        </div>
       </div>
       <i class="d-none d-lg-flex" style="width: 2vw"></i>
 
@@ -140,7 +135,7 @@
 
           <div class="col-lg-6 col-md-12 col-12">
             <div class="about-image svg my-5">
-              <img id="svg-about-light" src="img/svg_light.svg"
+              <img id="svg-about-light" src="/img/svg_light.svg"
                 onerror="this.onerror=null;this.src='votreapp/img/svg_light.svg';" class="img-fluid" alt="">
               <img id="svg-about-dark" src="img/svg_dark.svg"
                 onerror="this.onerror=null;this.src='votreapp/img/svg_dark.svg';" class="img-fluid" alt="">
@@ -168,6 +163,15 @@
     </div>
   </section>
 
+  <footer class="d-flex justify-content-around align-items-center">
+    <div></div>
+    <div class="ml-lg-5 d-lg-flex justify-content-center align-items-center transition theme-button">
+      <span class="iconify h3 mt-2 moon" data-icon="clarity:moon-solid" data-inline="false"></span>
+      <span class="iconify h3 mt-2 sun" style="display: none;" data-icon="heroicons-solid:sun"
+        data-inline="false"></span>
+      <span class="ml-2 font-weight-bold">Theme</span>
+    </div>
+  </footer>
   <script src="js/Headroom.js"></script>
   <script src="js/custom.js"></script>
   <!-- <script src="js/tmpl.min.js"></script> -->

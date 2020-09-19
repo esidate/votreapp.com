@@ -38,8 +38,12 @@ function dirname(path) {
 
   function dark() {
     _("body").classList.add("dark-mode");
-    _("#sun").style.display = "inline";
-    _("#moon").style.display = "none";
+    __(".sun").forEach(function (element) {
+      element.style.display = "inline";
+    });
+    __(".moon").forEach(function (element) {
+      element.style.display = "none";
+    });
     _("#svg-about-dark").style.display = "block";
     _("#svg-about-light").style.display = "none";
     localStorage.setItem("theme", "dark");
@@ -47,8 +51,12 @@ function dirname(path) {
 
   function light() {
     _("body").classList.remove("dark-mode");
-    _("#sun").style.display = "none";
-    _("#moon").style.display = "inline";
+    __(".sun").forEach(function (element) {
+      element.style.display = "none";
+    });
+    __(".moon").forEach(function (element) {
+      element.style.display = "inline";
+    });
     _("#svg-about-dark").style.display = "none";
     _("#svg-about-light").style.display = "block";
     localStorage.setItem("theme", "light");
@@ -58,14 +66,16 @@ function dirname(path) {
 
   document.defaultView.addEventListener("storage", theme); // LocalStorage event listener
 
-  _("#theme-button").addEventListener("click", function () {
-    if (_light) {
-      dark();
-      _light = false;
-    } else {
-      light();
-      _light = true;
-    }
+  __(".theme-button").forEach(function (element) {
+    element.addEventListener("click", function () {
+      if (_light) {
+        dark();
+        _light = false;
+      } else {
+        light();
+        _light = true;
+      }
+    });
   });
 
   /* =================== MOBILE NAVBAR =================== */
