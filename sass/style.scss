@@ -64,12 +64,13 @@ ul {
 }
 
 a {
+  color: lighten($color: $dark-mode-color, $amount: 5) !important;
   font-size: $link-font-size;
   font-weight: $font-weight-normal;
   text-decoration: none !important;
   @include transition-effect;
   &:hover {
-    color: $main-color !important;
+    color: $dark-main !important;
   }
 }
 
@@ -147,6 +148,7 @@ strong {
   font-size: $small-font-size;
   line-height: normal;
   overflow: hidden;
+  cursor: pointer;
   @include transition-effect;
   &:hover {
     color: $main-color;
@@ -307,6 +309,13 @@ strong {
 }
 
 .dark-mode {
+  a {
+    color: darken($color: white, $amount: 5) !important;
+    &:hover {
+      color: $light-main !important;
+    }
+  }
+
   background: $dark-mode-color;
   #wave {
     svg {

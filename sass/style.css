@@ -38,6 +38,7 @@ ul li {
 }
 
 a {
+  color: #323232 !important;
   font-size: 16px;
   font-weight: normal;
   text-decoration: none !important;
@@ -46,7 +47,7 @@ a {
 }
 
 a:hover {
-  color: #adcaff !important;
+  color: #8882d4 !important;
 }
 
 /* ============ TYPO =========== */
@@ -122,6 +123,7 @@ strong {
   font-size: 14px;
   line-height: normal;
   overflow: hidden;
+  cursor: pointer;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
@@ -332,6 +334,14 @@ strong {
   background: #252525;
 }
 
+.dark-mode a {
+  color: #f2f2f2 !important;
+}
+
+.dark-mode a:hover {
+  color: #8de2a2 !important;
+}
+
 .dark-mode #wave svg {
   fill: #8882d4;
 }
@@ -510,4 +520,4 @@ strong {
     vertical-align: top;
   }
 }
-/*# sourceMappingURL=tooplate-style.css.map */
+/*# sourceMappingURL=style.css.map */
