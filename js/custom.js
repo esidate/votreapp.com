@@ -40,8 +40,8 @@ function dirname(path) {
     _("body").classList.add("dark-mode");
     _("#sun").style.display = "inline";
     _("#moon").style.display = "none";
-    _("#svg-about").src =
-      dirname(document.location.href) + "images/undraw/svg_dark.svg";
+    _("#svg-about-dark").style.display = "block";
+    _("#svg-about-light").style.display = "none";
     localStorage.setItem("theme", "dark");
   }
 
@@ -49,8 +49,8 @@ function dirname(path) {
     _("body").classList.remove("dark-mode");
     _("#sun").style.display = "none";
     _("#moon").style.display = "inline";
-    _("#svg-about").src =
-      dirname(document.location.href) + "images/undraw/svg_light.svg";
+    _("#svg-about-dark").style.display = "none";
+    _("#svg-about-light").style.display = "block";
     localStorage.setItem("theme", "light");
   }
 
