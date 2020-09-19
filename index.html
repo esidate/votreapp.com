@@ -43,7 +43,7 @@
           </li>
         </ul>
 
-        <div class="ml-lg-5 d-lg-flex justify-content-center align-items-center transition theme-button">
+        <div class="ml-lg-5 d-none d-lg-flex justify-content-center align-items-center transition theme-button">
           <span class="iconify h3 mt-2 moon" data-icon="clarity:moon-solid" data-inline="false"></span>
           <span class="iconify h3 mt-2 sun" style="display: none;" data-icon="heroicons-solid:sun"
             data-inline="false"></span>
@@ -133,7 +133,7 @@
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-12 col-12">
+          <div class="col-lg-6 col-md-12 col-12 noselect">
             <div class="about-image svg my-5">
               <img id="svg-about-light" src="/img/svg_light.svg"
                 onerror="this.onerror=null;this.src='votreapp/img/svg_light.svg';" class="img-fluid" alt="">
@@ -148,30 +148,37 @@
   </div>
 
   <!-- ====================== OUR SERVICE ========================= -->
-  <section class="service py-5" id="service">
+  <section class="service" id="service">
     <div class="container">
 
       <div class="row">
         <div class="col-lg-11 text-center mx-auto col-12">
 
-          <div class="col-lg-8 mx-auto">
-            <h2>Our Services</h2>
+          <div class="mx-auto">
+            <h1>Our Services</h1>
           </div>
 
+          <div class="mat-card mt-5">
+            <div class="mx-auto pt-4">
+              <h3>Web Application — Website</h3>
+            </div>
+            <div style="height: 500px;">
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="d-flex justify-content-around align-items-center">
+  <div id="footer" class="d-flex justify-content-around align-items-center mt-4">
     <div></div>
-    <div class="ml-lg-5 d-lg-flex justify-content-center align-items-center transition theme-button">
-      <span class="iconify h3 mt-2 moon" data-icon="clarity:moon-solid" data-inline="false"></span>
-      <span class="iconify h3 mt-2 sun" style="display: none;" data-icon="heroicons-solid:sun"
-        data-inline="false"></span>
+    <div class="d-flex justify-content-center align-items-center transition theme-button">
+      <i class="iconify h3 mt-1 moon" data-icon="clarity:moon-solid" data-inline="false"></i>
+      <i class="iconify h3 mt-1 sun" style="display: none;" data-icon="heroicons-solid:sun" data-inline="false"></i>
       <span class="ml-2 font-weight-bold">Theme</span>
     </div>
-  </footer>
+  </div>
   <script src="js/Headroom.js"></script>
   <script src="js/custom.js"></script>
   <!-- <script src="js/tmpl.min.js"></script> -->

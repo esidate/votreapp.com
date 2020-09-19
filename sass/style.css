@@ -2,6 +2,7 @@
 /* ====== VARIABLES/MISCELLANEOUS ======= */
 body {
   font-family: "Maven Pro", sans-serif;
+  background-color: #fafafa;
 }
 
 * {
@@ -49,6 +50,21 @@ a {
 
 a:hover {
   color: #8882d4 !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 /* ============ TYPO =========== */
@@ -140,6 +156,15 @@ strong {
 .custom-btn.custom-btn-bg:hover {
   background: #8882d4;
   color: #ffffff !important;
+}
+
+/* ============ CARD =============== */
+.mat-card {
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  width: 100%;
+  background-color: white;
 }
 
 /* ============ ANIMATED TEXT =========== */
@@ -269,7 +294,7 @@ strong {
 }
 
 .navbar[class*="headroom--not-top"] {
-  background: #ffffff;
+  background-color: #fafafa;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
   border-bottom: 1px solid #f0f0f0;
@@ -279,6 +304,7 @@ strong {
 
 .navbar-brand {
   font-weight: bold;
+  font-size: 30px;
 }
 
 .navbar-expand-sm .navbar-nav .nav-link {
@@ -326,10 +352,11 @@ strong {
 }
 
 /* ================ Footer =============== */
-footer {
+#footer {
+  width: 100%;
   -webkit-box-shadow: 0px -1px 5px -2px rgba(0, 0, 0, 0.4);
           box-shadow: 0px -1px 5px -2px rgba(0, 0, 0, 0.4);
-  background-color: #f7f7f7;
+  background-color: #f2f2f2;
   padding: 5px 20px;
 }
 
@@ -376,7 +403,7 @@ footer {
 }
 
 .dark-mode .navbar[class*="headroom--not-top"] {
-  background: #373737;
+  background: #333333;
 }
 
 .dark-mode .navbar .navbar-nav,
@@ -386,7 +413,7 @@ footer {
 }
 
 .dark-mode #side-bar {
-  background-color: #393939;
+  background-color: #333333;
 }
 
 .dark-mode #menu svg {
@@ -409,8 +436,12 @@ footer {
   background: #434153;
 }
 
-.dark-mode footer {
-  background-color: #3f3f3f;
+.dark-mode .mat-card {
+  background-color: #333333;
+}
+
+.dark-mode #footer {
+  background-color: #333333;
 }
 
 /* ============ RESPONSIVENESS =========== */

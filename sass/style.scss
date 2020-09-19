@@ -20,6 +20,20 @@ $main-color: #adcaff;
 
 $light-main: #8de2a2;
 $dark-main: #8882d4;
+// Shades of white
+$white-d-2: darken(
+  $color: white,
+  $amount: 2,
+);
+$white-d-5: darken(
+  $color: white,
+  $amount: 5,
+);
+// Shades of black
+$black-l-20: lighten(
+  $color: black,
+  $amount: 20,
+);
 
 $border-color: #f2f2f1;
 $button-color: #5a5770;
@@ -33,6 +47,7 @@ $link-font-size: 16px;
 
 body {
   font-family: $font-base;
+  background-color: $white-d-2;
 }
 
 * {
@@ -74,6 +89,16 @@ a {
   &:hover {
     color: $dark-main !important;
   }
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 /* ============ TYPO =========== */
@@ -165,6 +190,13 @@ strong {
   }
 }
 
+/* ============ CARD =============== */
+.mat-card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  width: 100%;
+  background-color: white;
+}
 /* ============ ANIMATED TEXT =========== */
 
 .animated {
@@ -255,7 +287,7 @@ strong {
   }
 
   &[class*="headroom--not-top"] {
-    background: $text-white;
+    background-color: $white-d-2;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
     border-bottom: 1px solid #f0f0f0;
     padding-top: 0;
@@ -265,6 +297,7 @@ strong {
 
 .navbar-brand {
   font-weight: $font-weight-bold;
+  font-size: 30px;
 }
 
 .navbar-expand-sm {
@@ -317,9 +350,10 @@ strong {
 }
 
 /* ================ Footer =============== */
-footer {
+#footer {
+  width: 100%;
   box-shadow: 0px -1px 5px -2px rgba(0, 0, 0, 0.4);
-  background-color: darken($color: white, $amount: 3);
+  background-color: $white-d-5;
   padding: 5px 20px;
 }
 
@@ -370,7 +404,7 @@ footer {
 
   .navbar {
     &[class*="headroom--not-top"] {
-      background: lighten($color: $dark-mode-color, $amount: 7);
+      background: $black-l-20;
       // border-bottom: 1px solid #1f1f1f;
     }
     .navbar-nav,
@@ -381,7 +415,7 @@ footer {
   }
 
   #side-bar {
-    background-color: lighten($color: $dark-mode-color, $amount: 8);
+    background-color: $black-l-20;
   }
 
   #menu {
@@ -408,8 +442,12 @@ footer {
     background: darken($color: $button-color, $amount: 10);
   }
 
-  footer {
-    background-color: lighten($color: $dark-mode-color, $amount: 10);
+  .mat-card {
+    background-color: $black-l-20;
+  }
+
+  #footer {
+    background-color: $black-l-20;
   }
 }
 
