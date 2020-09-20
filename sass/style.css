@@ -11,7 +11,7 @@ body {
 }
 
 .full-screen {
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 
 .small-text {
@@ -360,6 +360,10 @@ strong {
   padding: 5px 20px;
 }
 
+#footer #heart {
+  color: #8882d4;
+}
+
 /* ============ DARK MODE =========== */
 .theme-button {
   cursor: pointer;
@@ -441,7 +445,12 @@ strong {
 }
 
 .dark-mode #footer {
+  color: white;
   background-color: #333333;
+}
+
+.dark-mode #footer #heart {
+  color: #8de2a2;
 }
 
 /* ============ RESPONSIVENESS =========== */
@@ -458,15 +467,12 @@ strong {
   h2 {
     font-size: 2em;
   }
-  .animated-item {
-    font-size: 28px;
-  }
   .navbar-nav .nav-link {
     padding: 3px 20px;
   }
   .animated-text,
   .animated-item {
-    font-size: 40px;
+    font-size: 40px !important;
   }
   .animated-info {
     width: 325px;
@@ -480,9 +486,6 @@ strong {
 }
 
 @media (max-width: 580px) {
-  .animated-item {
-    font-size: 24px;
-  }
   .custom-btn-group {
     text-align: center;
   }
