@@ -10,10 +10,6 @@ $font-weight-bold: bold;
 $font-weight-normal: normal;
 $font-weight-light: 300;
 
-$h1-font-color: #212121;
-$h2-font-color: #353535;
-$h3-font-color: #484848;
-$body-font-color: #5b5b5b;
 $text-white: #ffffff;
 $dark-mode-color: #252525;
 $main-color: #adcaff;
@@ -30,9 +26,21 @@ $white-d-5: darken(
   $amount: 5,
 );
 // Shades of black
+$black-l-40: lighten(
+  $color: black,
+  $amount: 40,
+);
+$black-l-30: lighten(
+  $color: black,
+  $amount: 30,
+);
 $black-l-20: lighten(
   $color: black,
   $amount: 20,
+);
+$black-l-10: lighten(
+  $color: black,
+  $amount: 10,
 );
 
 $border-color: #f2f2f1;
@@ -48,10 +56,8 @@ $link-font-size: 16px;
 body {
   font-family: $font-base;
   background-color: $white-d-2;
-}
-
-* {
   transition: background-color 0.5s ease;
+  color: $black-l-10;
 }
 
 .full-screen {
@@ -59,7 +65,6 @@ body {
 }
 
 .small-text {
-  color: $body-font-color;
   font-size: $small-font-size;
   font-weight: $font-weight-bold;
   padding: 8px 16px;
@@ -101,13 +106,17 @@ a {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /* ============ TYPO =========== */
 
 p {
+  color: $black-l-30;
   font-size: $body-font-size;
   font-weight: $font-weight-light;
   line-height: 1.5;
-  color: $body-font-color;
 }
 
 h1,
@@ -116,24 +125,19 @@ h3,
 h4,
 h5,
 h6 {
+  color: $black-l-20;
   font-weight: $font-weight-bold;
   letter-spacing: -1px;
 }
 
 h1 {
-  color: $h1-font-color;
   font-size: $h1-font-size;
   margin: 24px 0;
 }
 
 h2 {
-  color: $h2-font-color;
   font-size: $h2-font-size;
   font-weight: $font-weight-bold;
-}
-
-h3 {
-  color: $h3-font-color;
 }
 
 h3,
@@ -171,7 +175,6 @@ strong {
 
 /* =========== CUSTOM BUTTON =========== */
 .custom-btn {
-  color: $body-font-color;
   font-weight: $font-weight-bold;
   padding: 7px 29px;
   font-size: $small-font-size;
@@ -278,11 +281,8 @@ strong {
   right: 0;
   left: 0;
   z-index: 999;
-  will-change: transform;
-  transition: transform 200ms linear;
 
   &[class*="-pinned"] {
-    transform: translate(0, 0);
     background-color: lighten($color: $light-main, $amount: 10);
   }
 
@@ -446,6 +446,7 @@ strong {
   }
 
   .mat-card {
+    color: white;
     background-color: $black-l-20;
   }
 

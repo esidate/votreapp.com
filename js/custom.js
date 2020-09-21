@@ -12,6 +12,24 @@ function dirname(path) {
   return path.match(/.*\//);
 }
 
+/* ============ SMOOTH SCROLL =================== */
+var scroll = new SmoothScroll('a[href*="#"]', {
+  easing: "easeInOutQuad",
+  // header: "[navbar]",
+  offset: function (anchor, toggle) {
+    var anchor = toggle.getAttribute("href");
+
+    switch (anchor) {
+      case "#home":
+        return 0;
+      case "#service":
+        return 60;
+      default:
+        return 50;
+    }
+  },
+});
+
 (function () {
   /* =================== HEADER =================== */
   var headroom = new Headroom(_("#navbar"));
@@ -44,8 +62,12 @@ function dirname(path) {
     __(".moon").forEach(function (element) {
       element.style.display = "none";
     });
-    _("#svg-about-dark").style.display = "block";
-    _("#svg-about-light").style.display = "none";
+    __(".svg-dark").forEach(function (element) {
+      element.style.display = "block";
+    });
+    __(".svg-light").forEach(function (element) {
+      element.style.display = "none";
+    });
     localStorage.setItem("theme", "dark");
   }
 
@@ -57,8 +79,12 @@ function dirname(path) {
     __(".moon").forEach(function (element) {
       element.style.display = "inline";
     });
-    _("#svg-about-dark").style.display = "none";
-    _("#svg-about-light").style.display = "block";
+    __(".svg-dark").forEach(function (element) {
+      element.style.display = "none";
+    });
+    __(".svg-light").forEach(function (element) {
+      element.style.display = "block";
+    });
     localStorage.setItem("theme", "light");
   }
 

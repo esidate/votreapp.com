@@ -3,11 +3,9 @@
 body {
   font-family: "Maven Pro", sans-serif;
   background-color: #fafafa;
-}
-
-* {
   -webkit-transition: background-color 0.5s ease;
   transition: background-color 0.5s ease;
+  color: #1a1a1a;
 }
 
 .full-screen {
@@ -15,7 +13,6 @@ body {
 }
 
 .small-text {
-  color: #5b5b5b;
   font-size: 14px;
   font-weight: bold;
   padding: 8px 16px;
@@ -67,12 +64,16 @@ a:hover {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 /* ============ TYPO =========== */
 p {
+  color: #4d4d4d;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5;
-  color: #5b5b5b;
 }
 
 h1,
@@ -81,24 +82,19 @@ h3,
 h4,
 h5,
 h6 {
+  color: #333333;
   font-weight: bold;
   letter-spacing: -1px;
 }
 
 h1 {
-  color: #212121;
   font-size: 2.8em;
   margin: 24px 0;
 }
 
 h2 {
-  color: #353535;
   font-size: 2.4em;
   font-weight: bold;
-}
-
-h3 {
-  color: #484848;
 }
 
 h3,
@@ -137,7 +133,6 @@ strong {
 
 /* =========== CUSTOM BUTTON =========== */
 .custom-btn {
-  color: #5b5b5b;
   font-weight: bold;
   padding: 7px 29px;
   font-size: 14px;
@@ -280,16 +275,9 @@ strong {
   right: 0;
   left: 0;
   z-index: 999;
-  will-change: transform;
-  -webkit-transition: -webkit-transform 200ms linear;
-  transition: -webkit-transform 200ms linear;
-  transition: transform 200ms linear;
-  transition: transform 200ms linear, -webkit-transform 200ms linear;
 }
 
 .navbar[class*="-pinned"] {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
   background-color: #b6ecc3;
 }
 
@@ -441,6 +429,7 @@ strong {
 }
 
 .dark-mode .mat-card {
+  color: white;
   background-color: #333333;
 }
 

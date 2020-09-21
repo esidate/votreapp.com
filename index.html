@@ -17,7 +17,7 @@
 <body>
 
   <!-- ====================== NAV BAR ======================= -->
-  <nav class="navbar navbar-expand-sm navbar-light" id="navbar">
+  <nav class="navbar navbar-expand-sm navbar-light" id="navbar" navbar>
     <div id="bar" class="d-flex justify-content-between justify-items-center w-100 p-1">
       <i class="d-none d-lg-flex" style="width: 2vw"></i>
 
@@ -81,8 +81,8 @@
       </div>
   </nav>
 
-  <!-- ===================== FIRST PARAGRAPH ======================= -->
-  <div style="overflow-x: hidden;" class="position-relative">
+  <!-- ===================== HOME ======================= -->
+  <section id="home" style="overflow-x: hidden;" class="position-relative">
     <div id="wave">
       <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
         <path d="M0.00,92.27 C216.83,192.92 304.30,8.39 500.00,109.03 L500.00,0.00 L0.00,0.00 Z"></path>
@@ -135,17 +135,17 @@
 
           <div class="col-lg-6 col-md-12 col-12 noselect">
             <div class="about-image svg my-5">
-              <img id="svg-about-light" src="img/svg_light.svg"
-                onerror="this.onerror=null;this.src='/votreapp/img/svg_light.svg';" class="img-fluid" alt="">
-              <img id="svg-about-dark" src="img/svg_dark.svg"
-                onerror="this.onerror=null;this.src='/votreapp/img/svg_dark.svg';" class="img-fluid" alt="">
+              <img src="img/about_light.svg"
+                onerror="this.onerror=null;this.src='/votreapp/img/about_light.svg';" class="img-fluid svg-light" alt="">
+              <img src="img/about_dark.svg"
+                onerror="this.onerror=null;this.src='/votreapp/img/about_dark.svg';" class="img-fluid svg-dark" alt="">
             </div>
           </div>
 
         </div>
       </div>
     </section>
-  </div>
+  </section>
 
   <!-- ====================== OUR SERVICE ========================= -->
   <section class="service" id="service">
@@ -162,8 +162,21 @@
             <div class="mx-auto pt-4">
               <h3>Web Application — Website</h3>
             </div>
-            <div style="height: 500px;">
-
+            <div style="height: 400px;" class="row">
+              <div class="col-lg-5 col-md-12 col-12 d-flex justify-content-center align-items-center">
+                <img class="w-100 p-4" src="img/web_light.svg"
+                onerror="this.onerror=null;this.src='/votreapp/img/web.svg';" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-7 col-md-12 col-12 d-flex justify-content-center align-items-center">
+                <div class="w-75">
+                  Our web development team can build a variety of web apps,
+                  from attractive static websites to flexible, secure and scalable enterprise grade applications 
+                  <i class="iconify" data-icon="ant-design:question-circle-outlined" data-inline="false"></i> .
+                  We also provide a wide range of services like SEO, Consultancy, Maintenance 
+                  <i class="iconify" data-icon="ant-design:question-circle-outlined" data-inline="false"></i> 
+                  , Code review <i class="iconify" data-icon="ant-design:question-circle-outlined" data-inline="false"></i> .
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -173,7 +186,8 @@
 
   <div id="footer" class="d-flex justify-content-around align-items-center mt-4">
     <div></div>
-    <div>Made with <i class="iconify mt-1" id="heart" data-icon="ant-design:heart-filled" data-inline="false"></i> in Morocco</div>
+    <div>Made with <i class="iconify mt-1" id="heart" data-icon="ant-design:heart-filled" data-inline="false"></i> in
+      Morocco</div>
     <div class="d-flex justify-content-center align-items-center transition theme-button">
       <i class="iconify h3 mt-1 moon" data-icon="clarity:moon-solid" data-inline="false"></i>
       <i class="iconify h3 mt-1 sun" style="display: none;" data-icon="heroicons-solid:sun" data-inline="false"></i>
@@ -181,9 +195,11 @@
     </div>
   </div>
   <script src="js/Headroom.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="js/smooth-scroll.polyfills.min.js"></script>
   <!-- <script src="js/tmpl.min.js"></script> -->
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+  <script src="js/custom.js"></script>
 
 </body>
 
