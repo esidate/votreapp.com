@@ -131,6 +131,20 @@ strong {
           filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
 }
 
+#blob1 {
+  overflow: hidden;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.text-blob {
+  z-index: 9999 !important;
+}
+
 /* =========== CUSTOM BUTTON =========== */
 .custom-btn {
   font-weight: bold;
