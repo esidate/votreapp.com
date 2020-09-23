@@ -131,7 +131,7 @@ strong {
 
 .vertical-wave {
   position: absolute;
-  right: -130px;
+  right: -15%;
   top: -100px;
 }
 
@@ -169,6 +169,10 @@ strong {
   border-radius: 3px;
   width: 100%;
   background-color: white;
+}
+
+.text-in-card {
+  width: 75%;
 }
 
 /* ============ ANIMATED TEXT =========== */
@@ -456,6 +460,9 @@ strong {
   .full-screen {
     padding-bottom: 4rem;
   }
+  .text-in-card {
+    width: 85%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -484,12 +491,18 @@ strong {
 }
 
 @media (max-width: 580px) {
+  h2 {
+    font-size: 2em;
+  }
   .custom-btn-group {
     text-align: center;
   }
   .custom-btn {
     display: block;
     margin: 10px 0;
+  }
+  .text-in-card {
+    width: 90%;
   }
 }
 /*# sourceMappingURL=style.css.map */
