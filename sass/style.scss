@@ -194,7 +194,7 @@ strong {
 .horizontal-wave {
   position: absolute;
   right: -15%;
-  bottom: -5%;
+  bottom: 0px;
   svg {
     stroke: none;
     fill: lighten($color: $dark-main, $amount: 20);
