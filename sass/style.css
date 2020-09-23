@@ -127,22 +127,17 @@ strong {
 #wave svg {
   stroke: none;
   fill: #b6ecc3;
-  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
-          filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
 }
 
-#blob1 {
-  overflow: hidden;
+.vertical-wave {
   position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  right: -130px;
+  top: -100px;
 }
 
-.text-blob {
-  z-index: 9999 !important;
+.vertical-wave svg {
+  stroke: none;
+  fill: #bebbe8;
 }
 
 /* =========== CUSTOM BUTTON =========== */

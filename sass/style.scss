@@ -169,20 +169,17 @@ strong {
   svg {
     stroke: none;
     fill: lighten($color: $light-main, $amount: 10);
-    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
+    // filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
   }
 }
-#blob1 {
-  overflow: hidden;
+.vertical-wave {
   position: absolute;
-  top: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-.text-blob {
-  z-index: 9999 !important;
+  right: -130px;
+  top: -100px;
+  svg {
+    stroke: none;
+    fill: lighten($color: $dark-main, $amount: 15);
+  }
 }
 /* =========== CUSTOM BUTTON =========== */
 .custom-btn {
