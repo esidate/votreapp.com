@@ -25,6 +25,14 @@ $white-d-5: darken(
   $color: white,
   $amount: 5,
 );
+$white-d-10: darken(
+  $color: white,
+  $amount: 10,
+);
+$white-d-20: darken(
+  $color: white,
+  $amount: 20,
+);
 // Shades of black
 $black-l-40: lighten(
   $color: black,
@@ -179,14 +187,24 @@ strong {
   top: -100px;
   svg {
     stroke: none;
-    fill: lighten($color: $dark-main, $amount: 15);
+    fill: lighten($color: $dark-main, $amount: 20);
+  }
+}
+
+.horizontal-wave {
+  position: absolute;
+  right: -15%;
+  bottom: -5%;
+  svg {
+    stroke: none;
+    fill: lighten($color: $dark-main, $amount: 20);
   }
 }
 
 /* =========== CUSTOM BUTTON =========== */
 .custom-btn {
   font-weight: $font-weight-bold;
-  padding: 7px 29px;
+  padding: 4px 29px 5px 29px;
   font-size: $small-font-size;
   line-height: normal;
   overflow: hidden;
@@ -203,6 +221,13 @@ strong {
   }
 }
 
+.btn-overlay {
+  &:hover {
+    color: inherit !important;
+    background-color: transparentize($color: $black-l-20, $amount: 0.9);
+    border-radius: 3px;
+  }
+}
 /* ============ CARD =============== */
 .mat-card {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
@@ -212,6 +237,7 @@ strong {
 }
 .text-in-card {
   width: 75%;
+  color: $black-l-30;
 }
 /* ============ ANIMATED TEXT =========== */
 
@@ -363,6 +389,7 @@ strong {
 }
 
 /* ================ Footer =============== */
+
 #footer {
   width: 100%;
   box-shadow: 0px -1px 5px -2px rgba(0, 0, 0, 0.4);
@@ -371,6 +398,65 @@ strong {
   #heart {
     color: $dark-main;
   }
+}
+
+/* ============== TOOLTIP ================ */
+
+.tipped {
+  display: inline-block;
+}
+
+.tipped {
+  position: relative;
+  cursor: pointer;
+
+  &:hover .tt {
+    animation-name: tooltip-reveal;
+    opacity: 1;
+
+    // Optional "bottom" direction
+    &.tt-bottom {
+      animation-name: tooltip-reveal-bottom;
+    }
+  }
+}
+
+.tt {
+  font-size: 10px;
+  line-height: 22px;
+  color: $black-l-20;
+  font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  opacity: 0;
+  background-color: $white-d-5;
+
+  padding: 0 8px;
+  height: 22px;
+  overflow: hidden;
+  display: inline-block;
+
+  position: absolute;
+  left: 50%;
+  top: -25px;
+
+  pointer-events: none;
+
+  animation-duration: 300ms;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition: opacity 300ms;
+
+  // Optional "bottom" direction
+  &.tt-bottom {
+    bottom: -20px;
+    top: auto;
+  }
+}
+.question-icon {
+  margin-top: 3px;
 }
 
 /* ============ DARK MODE =========== */
@@ -404,6 +490,13 @@ strong {
     }
   }
 
+  .vertical-wave,
+  .horizontal-wave {
+    svg {
+      fill: $dark-main;
+    }
+  }
+
   .navbar-light .navbar-nav .nav-link {
     &:hover {
       color: $main-color;
@@ -420,7 +513,7 @@ strong {
 
   .navbar {
     &[class*="headroom--not-top"] {
-      background: $black-l-20;
+      background: $black-l-30;
       // border-bottom: 1px solid #1f1f1f;
     }
     .navbar-nav,
@@ -461,6 +554,22 @@ strong {
   .mat-card {
     color: white;
     background-color: $black-l-20;
+  }
+
+  .text-in-card {
+    color: $white-d-5;
+  }
+
+  .btn-overlay {
+    color: $white-d-5;
+    &:hover {
+      color: $white-d-2 !important;
+    }
+  }
+
+  .tt {
+    color: $white-d-5;
+    background-color: $black-l-40;
   }
 
   #footer {

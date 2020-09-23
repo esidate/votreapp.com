@@ -136,4 +136,38 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   });
 
   _("#menu").addEventListener("click", toggleNav);
+
+  /* ============== TOOLTIP ============== */
+  function tip() {
+    let t = this.querySelector(".tt");
+    if (t === null) {
+      t = document.createElement("div");
+      t.classList.add("tt");
+      this.append(t);
+    }
+
+    // Optional direction
+    let dir = this.getAttribute("tt-dir");
+    if (dir && dir === "bottom") {
+      t.classList.add("tt-bottom");
+    }
+
+    // Optional event call
+    let onHover = this.getAttribute("onhover");
+    let hasOnHover = onHover && onHover in window;
+    if (hasOnHover && typeof window[onHover] === "function") {
+      window[onHover].call(this);
+    }
+
+    t.innerHTML = this.getAttribute("tt") || "";
+    let width = t.offsetWidth;
+    let halfWidth = width / 2;
+    // t.setAttribute('radius', halfWidth);
+    t.style.marginLeft = `${-halfWidth}px`;
+  }
+
+  __(".tipped").forEach(function (element) {
+    element.addEventListener("mouseenter", tip);
+    element.addEventListener("touchstart", tip);
+  });
 })();
