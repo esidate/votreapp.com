@@ -182,29 +182,31 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
   /* ============== TOOLTIP ============== */
   function tip() {
-    let t = this.querySelector(".tt");
+    var t = this.querySelector(".tt");
     if (t === null) {
       t = document.createElement("div");
       t.classList.add("tt");
+      t.style.zIndex = "99999999";
       this.append(t);
     }
 
     // Optional direction
-    let dir = this.getAttribute("tt-dir");
+    var dir = this.getAttribute("tt-dir");
     if (dir && dir === "bottom") {
       t.classList.add("tt-bottom");
     }
 
     // Optional event call
-    let onHover = this.getAttribute("onhover");
-    let hasOnHover = onHover && onHover in window;
+    var onHover = this.getAttribute("onhover");
+    var hasOnHover = onHover && onHover in window;
     if (hasOnHover && typeof window[onHover] === "function") {
       window[onHover].call(this);
     }
 
     t.innerHTML = this.getAttribute("tt") || "";
-    let width = t.offsetWidth;
-    let halfWidth = width / 2;
+
+    var width = t.offsetWidth;
+    var halfWidth = width / 2;
     // t.setAttribute('radius', halfWidth);
     t.style.marginLeft = `${-halfWidth}px`;
   }
