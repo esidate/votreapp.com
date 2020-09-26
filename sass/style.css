@@ -307,12 +307,16 @@ strong {
   left: 0;
   z-index: 999;
   background-color: #b6ecc3;
+  -webkit-transition: background-color 0.2s ease, padding 0.2s ease, -webkit-box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, padding 0.2s ease, -webkit-box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
 }
 
 .scrolled {
   background-color: #fafafa;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
-          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid #f0f0f0;
   padding-top: 0;
   padding-bottom: 0;
@@ -475,6 +479,10 @@ strong {
 
 .dark-mode .navbar-light .navbar-nav .nav-link:hover {
   color: #adcaff;
+}
+
+.dark-mode .navbar {
+  background-color: #8882d4;
 }
 
 .dark-mode .navbar .navbar-nav,

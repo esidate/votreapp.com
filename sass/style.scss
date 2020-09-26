@@ -321,11 +321,13 @@ strong {
   left: 0;
   z-index: 999;
   background-color: lighten($color: $light-main, $amount: 10);
+  transition: background-color 0.2s ease, padding 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .scrolled {
   background-color: $white-d-2;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.09);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid #f0f0f0;
   padding-top: 0;
   padding-bottom: 0;
@@ -501,6 +503,7 @@ strong {
   }
 
   .navbar {
+    background-color: $dark-main;
     .navbar-nav,
     .nav-link,
     .navbar-brand {
