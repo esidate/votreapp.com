@@ -8,6 +8,34 @@ function __(x) {
   return document.querySelectorAll(x);
 }
 
+function l(msg, lvl = 1, info = null) {
+  /* msg: debugging message
+     lvl: 1 = info, 2 = warning, 3 = error, 4 = fatal
+  */
+  switch (lvl) {
+    case 1:
+      var color = "color:green";
+      break;
+    case 2:
+      var color = "color:yellow";
+      break;
+    case 3:
+      var color = "color:orange";
+      break;
+    case 4:
+      var color = "color:red";
+      break;
+    default:
+      var color = "color:green";
+      break;
+  }
+  console.log("[Debug-Log] =========== START ==========");
+  console.log("[Debug-Log] Message: %c%s", color, msg);
+  if (!!info) {
+    console.log("[Debug-Log] Additional information: ", info);
+  }
+  console.log("[Debug-Log] =========== END ==========");
+}
 function dirname(path) {
   return path.match(/.*\//);
 }
@@ -32,9 +60,17 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
 (function () {
   /* =================== HEADER =================== */
-  var headroom = new Headroom(_("#navbar"));
-  headroom.init();
-
+  window.onscroll = function () {
+    var currentWindowPos =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentWindowPos > 0) {
+      console.log("oui");
+      _("#navbar").classList.add("scrolled");
+    } else {
+      console.log("non");
+      _("#navbar").classList.remove("scrolled");
+    }
+  };
   /* =================== THEME =================== */
   var _light = true;
 
