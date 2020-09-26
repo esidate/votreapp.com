@@ -1,5 +1,4 @@
 /* =================== HELPERS =================== */
-
 function _(x) {
   return document.querySelector(x);
 }
@@ -8,7 +7,7 @@ function __(x) {
   return document.querySelectorAll(x);
 }
 
-function l(msg, lvl = 1, info = null) {
+function log(msg, lvl = 1, info = null) {
   /* msg: debugging message
      lvl: 1 = info, 2 = warning, 3 = error, 4 = fatal
   */
@@ -36,6 +35,7 @@ function l(msg, lvl = 1, info = null) {
   }
   console.log("[Debug-Log] =========== END ==========");
 }
+
 function dirname(path) {
   return path.match(/.*\//);
 }
@@ -63,14 +63,11 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   window.onscroll = function () {
     var currentWindowPos =
       document.documentElement.scrollTop || document.body.scrollTop;
-    if (currentWindowPos > 0) {
-      console.log("oui");
-      _("#navbar").classList.add("scrolled");
-    } else {
-      console.log("non");
-      _("#navbar").classList.remove("scrolled");
-    }
+    currentWindowPos > 0
+      ? _("#navbar").classList.add("scrolled")
+      : _("#navbar").classList.remove("scrolled");
   };
+
   /* =================== THEME =================== */
   var _light = true;
 
@@ -91,6 +88,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   }
 
   function dark() {
+    _(".navbar").style.transition = "none";
     _("body").classList.add("dark-mode");
     __(".sun").forEach(function (element) {
       element.style.display = "inline";
@@ -105,9 +103,14 @@ var scroll = new SmoothScroll('a[href*="#"]', {
       element.style.display = "none";
     });
     localStorage.setItem("theme", "dark");
+    setTimeout(() => {
+      _(".navbar").style.transition =
+        "background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease";
+    }, 0.5); // Wait for animation to complete
   }
 
   function light() {
+    _(".navbar").style.transition = "none";
     _("body").classList.remove("dark-mode");
     __(".sun").forEach(function (element) {
       element.style.display = "none";
@@ -122,6 +125,10 @@ var scroll = new SmoothScroll('a[href*="#"]', {
       element.style.display = "block";
     });
     localStorage.setItem("theme", "light");
+    setTimeout(() => {
+      _(".navbar").style.transition =
+        "background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease";
+    }, 0.5); // Wait for animation to complete
   }
 
   theme();

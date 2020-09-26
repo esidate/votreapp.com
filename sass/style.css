@@ -126,29 +126,49 @@ strong {
 
 #wave svg {
   stroke: none;
-  fill: #b6ecc3;
+  fill: #a1e7b3;
 }
 
-.vertical-wave {
+.vertical-wave-web,
+.horizontal-wave-web {
   position: absolute;
-  right: -15%;
-  top: -100px;
 }
 
-.vertical-wave svg {
+.vertical-wave-web svg,
+.horizontal-wave-web svg {
   stroke: none;
-  fill: #d0ceee;
+  fill: #bebbe8;
 }
 
-.horizontal-wave {
-  position: absolute;
-  right: -15%;
+.horizontal-wave-web {
+  right: -200px;
   bottom: 0px;
 }
 
-.horizontal-wave svg {
+.vertical-wave-web {
+  right: -135px;
+  top: -100px;
+}
+
+.vertical-wave-dekstop,
+.horizontal-wave-desktop {
+  position: absolute;
+}
+
+.vertical-wave-dekstop svg,
+.horizontal-wave-desktop svg {
   stroke: none;
-  fill: #d0ceee;
+  fill: #a1e7b3;
+}
+
+.vertical-wave-dekstop {
+  left: -50px;
+  top: 0px;
+}
+
+.horizontal-wave-desktop {
+  right: 0px;
+  bottom: 0px;
 }
 
 /* =========== CUSTOM BUTTON =========== */
@@ -190,7 +210,7 @@ strong {
 
 .text-in-card {
   width: 75%;
-  color: #4d4d4d;
+  color: #333333;
 }
 
 /* ============ ANIMATED TEXT =========== */
@@ -306,7 +326,7 @@ strong {
   right: 0;
   left: 0;
   z-index: 999;
-  background-color: #b6ecc3;
+  background-color: #a1e7b3;
   -webkit-transition: background-color 0.2s ease, padding 0.2s ease, -webkit-box-shadow 0.2s ease;
   transition: background-color 0.2s ease, padding 0.2s ease, -webkit-box-shadow 0.2s ease;
   transition: background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease;
@@ -472,9 +492,14 @@ strong {
   fill: #8882d4;
 }
 
-.dark-mode .vertical-wave svg,
-.dark-mode .horizontal-wave svg {
+.dark-mode .vertical-wave-web svg,
+.dark-mode .horizontal-wave-web svg {
   fill: #8882d4;
+}
+
+.dark-mode .vertical-wave-dekstop svg,
+.dark-mode .horizontal-wave-desktop svg {
+  fill: #31bf77;
 }
 
 .dark-mode .navbar-light .navbar-nav .nav-link:hover {
@@ -552,6 +577,15 @@ strong {
 }
 
 /* ============ RESPONSIVENESS =========== */
+@media (max-width: 1199px) {
+  .vertical-wave-dekstop {
+    left: -170px;
+  }
+  .vertical-wave-web {
+    right: -200px;
+  }
+}
+
 @media (max-width: 991px) {
   .full-screen {
     padding-bottom: 4rem;

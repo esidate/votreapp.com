@@ -176,29 +176,47 @@ strong {
 
   svg {
     stroke: none;
-    fill: lighten($color: $light-main, $amount: 10);
+    fill: lighten($color: $light-main, $amount: 5);
     // filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.4));
   }
 }
 
-.vertical-wave {
+.vertical-wave-web,
+.horizontal-wave-web {
   position: absolute;
-  right: -15%;
-  top: -100px;
   svg {
     stroke: none;
-    fill: lighten($color: $dark-main, $amount: 20);
+    fill: lighten($color: $dark-main, $amount: 15);
   }
 }
 
-.horizontal-wave {
-  position: absolute;
-  right: -15%;
+.horizontal-wave-web {
+  right: -200px;
   bottom: 0px;
+}
+
+.vertical-wave-web {
+  right: -135px;
+  top: -100px;
+}
+
+.vertical-wave-dekstop,
+.horizontal-wave-desktop {
+  position: absolute;
   svg {
     stroke: none;
-    fill: lighten($color: $dark-main, $amount: 20);
+    fill: lighten($color: $light-main, $amount: 5);
   }
+}
+
+.vertical-wave-dekstop {
+  left: -50px;
+  top: 0px;
+}
+
+.horizontal-wave-desktop {
+  right: 0px;
+  bottom: 0px;
 }
 
 /* =========== CUSTOM BUTTON =========== */
@@ -237,7 +255,7 @@ strong {
 }
 .text-in-card {
   width: 75%;
-  color: $black-l-30;
+  color: $black-l-20;
 }
 /* ============ ANIMATED TEXT =========== */
 
@@ -320,7 +338,7 @@ strong {
   right: 0;
   left: 0;
   z-index: 999;
-  background-color: lighten($color: $light-main, $amount: 10);
+  background-color: lighten($color: $light-main, $amount: 5);
   transition: background-color 0.2s ease, padding 0.2s ease,
     box-shadow 0.2s ease;
 }
@@ -489,10 +507,17 @@ strong {
     }
   }
 
-  .vertical-wave,
-  .horizontal-wave {
+  .vertical-wave-web,
+  .horizontal-wave-web {
     svg {
       fill: $dark-main;
+    }
+  }
+
+  .vertical-wave-dekstop,
+  .horizontal-wave-desktop {
+    svg {
+      fill: darken($color: adjust-hue($light-main, 15deg), $amount: 25);
     }
   }
 
@@ -576,10 +601,20 @@ strong {
 
 /* ============ RESPONSIVENESS =========== */
 
+@media (max-width: 1199px) {
+  .vertical-wave-dekstop {
+    left: -170px;
+  }
+  .vertical-wave-web {
+    right: -200px;
+  }
+}
+
 @media (max-width: 991px) {
   .full-screen {
     padding-bottom: 4rem;
   }
+
   .text-in-card {
     width: 85%;
   }
