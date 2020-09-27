@@ -5,10 +5,16 @@
   <meta charset="utf-8">
   <title><%= htmlWebpackPlugin.options.title %></title>
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/js/OverlayScrollbars.min.js"
+    integrity="sha512-5R3ngaUdvyhXkQkIqTf/k+Noq3phjmrqlUQyQYbgfI34Mzcx7vLIIYTy/K1VMHkL33T709kfh5y6R9Xy/Cbt7Q=="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.0/css/OverlayScrollbars.min.css"
+    integrity="sha512-pYQcc5kgavar0ah58/O8hw/6Tbo3mWlmQTmvoi1i96cBz7jQYS9as5J+Nfy32rAHY6CgR9ExwnFMcBdGVcKM7g=="
+    crossorigin="anonymous" />
 </head>
 
-<body>
+<body data-simplebar>
 
   <!-- ====================== NAV BAR ======================= -->
   <nav class="navbar navbar-expand-sm navbar-light" id="navbar" navbar>
@@ -299,8 +305,8 @@
                   spellcheck="false">
               </div>
               <div class="clearfix">
-                <textarea name="textarea" id="" cols="35" name="message" rows="7" placeholder="Message"
-                  required></textarea>
+                <textarea name="textarea" id="contact-form-textarea" cols="35" name="message" rows="7" placeholder="Message" required
+                  data-simplebar></textarea>
               </div>
               <div class="clearfix"><input type="submit" value="Send"></div>
             </form>

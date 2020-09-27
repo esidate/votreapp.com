@@ -34,30 +34,42 @@ const log = (msg, lvl = 1, info = null) => {
   console.log("[Debug-Log] =========== END ==========");
 };
 
-/* ============ SMOOTH SCROLL =================== */
-new SmoothScroll('a[href*="#"]', {
-  easing: "easeInOutQuad",
-  // header: "[navbar]",
-  offset: (anchor, toggle) => {
-    const a = toggle.getAttribute("href");
-
-    switch (a) {
-      case "#home":
-        return 0;
-      case "#service":
-        return 60;
-      default:
-        return 50;
-    }
-  },
-});
 window.addEventListener("DOMContentLoaded", () => {
-  /* =================== HEADER =================== */
-  window.onscroll = () => {
-    (document.documentElement.scrollTop || document.body.scrollTop) > 0
-      ? q("#navbar").classList.add("scrolled")
-      : q("#navbar").classList.remove("scrolled");
-  };
+  /* ================= CUSTOM SCROLL ============== */
+  OverlayScrollbars(qA("body"), {
+    callbacks: {
+      onScroll: function () {
+        if (
+          this.scroll() &&
+          (this.scroll().position.y > 35 ||
+            this.scroll().handleOffset.y > 10 ||
+            this.scroll().snappedHandleOffset.y > 10)
+        ) {
+          q("#navbar").classList.add("scrolled");
+        } else {
+          q("#navbar").classList.remove("scrolled");
+        }
+      },
+    },
+  });
+
+  /* ============ SMOOTH SCROLL =================== */
+  new SmoothScroll('a[href*="#"]', {
+    easing: "easeInOutQuad",
+    // header: "[navbar]",
+    offset: (anchor, toggle) => {
+      const a = toggle.getAttribute("href");
+
+      switch (a) {
+        case "#home":
+          return 0;
+        case "#service":
+          return 60;
+        default:
+          return 50;
+      }
+    },
+  });
 
   /* =================== THEME =================== */
   let _light = true;
