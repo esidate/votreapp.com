@@ -33,6 +33,10 @@ $white-d-20: darken(
   $color: white,
   $amount: 20,
 );
+$white-d-30: darken(
+  $color: white,
+  $amount: 30,
+);
 // Shades of black
 $black-l-40: lighten(
   $color: black,
@@ -68,23 +72,39 @@ $link-font-size: 16px;
   background: transparentize($color: $dark, $amount: 0.75);
 }
 
+::-moz-placeholder {
+  color: $black-l-40;
+  font-weight: 300;
+  opacity: 1;
+}
+
+::-webkit-input-placeholder {
+  color: $black-l-40;
+  font-weight: 300;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font-family: $font-base;
-  background-color: $white-d-2;
+  background-color: $white-d-5;
   transition: background-color 0.5s ease;
   color: $black-l-10;
 }
 
-.full-screen {
-  padding: 5rem 0;
-}
-
-.small-text {
-  font-size: $small-font-size;
-  font-weight: $font-weight-bold;
-  padding: 8px 16px;
-  border-radius: 50px;
-  letter-spacing: 0.2px;
+input:focus,
+textarea:focus,
+keygen:focus,
+select:focus {
+  outline: none;
 }
 
 ul {
@@ -109,6 +129,18 @@ a {
   &:hover {
     color: $dark-main !important;
   }
+}
+
+.full-screen {
+  padding: 5rem 0;
+}
+
+.small-text {
+  font-size: $small-font-size;
+  font-weight: $font-weight-bold;
+  padding: 8px 16px;
+  border-radius: 50px;
+  letter-spacing: 0.2px;
 }
 
 .noselect {
@@ -253,19 +285,22 @@ strong {
     border-radius: 3px;
   }
 }
+
 /* ============ CARD =============== */
+
 .mat-card {
   display: flex;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
   border-radius: 3px;
   width: 100%;
   min-height: 325px;
-  background-color: white;
+  background-color: $white;
 }
 .text-in-card {
   width: 75%;
   color: $black-l-20;
 }
+
 /* ============ ANIMATED TEXT =========== */
 
 .animated {
@@ -353,7 +388,7 @@ strong {
 }
 
 .scrolled {
-  background-color: $white-d-2;
+  background-color: $white;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid #f0f0f0;
   padding-top: 0;
@@ -414,12 +449,70 @@ strong {
   }
 }
 
-/* ================ Footer =============== */
+/* ================ CONTACT US ============= */
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.col2 {
+  width: 49%;
+}
+
+.col2.first {
+  float: left;
+}
+
+.col2.last {
+  float: right;
+}
+
+.col2.column2 {
+  padding: 0 30px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 12px;
+  border: 0;
+  border-radius: 3px;
+  background: $white;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.13);
+  margin: 7px 0;
+}
+
+.contact-form textarea {
+  width: 100%;
+  display: block;
+  // resize: none;
+}
+
+.contact-form input[type="submit"] {
+  padding: 10px 100px;
+  color: $white;
+  border: 0;
+  border-radius: 5px;
+  background: $dark-main;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 7px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
+}
+
+/* ================ FOOTER =============== */
 
 #footer {
   width: 100%;
   box-shadow: 0px -1px 5px -2px rgba(0, 0, 0, 0.4);
-  background-color: $white-d-5;
+  background-color: $white;
   padding: 5px 20px;
   #heart {
     color: $dark-main;
@@ -496,8 +589,20 @@ strong {
   ::-moz-selection {
     background: transparentize($color: $white, $amount: 0.75);
   }
+
   ::selection {
     background: transparentize($color: $white, $amount: 0.75);
+  }
+
+  ::-moz-placeholder {
+    color: $white-d-20;
+    font-weight: 300;
+    opacity: 1;
+  }
+
+  ::-webkit-input-placeholder {
+    color: $white-d-20;
+    font-weight: 300;
   }
 
   h1,
@@ -510,7 +615,7 @@ strong {
   }
 
   a {
-    color: darken($color: white, $amount: 5) !important;
+    color: darken($color: $white, $amount: 5) !important;
     &:hover {
       color: $light-main !important;
     }
@@ -547,7 +652,7 @@ strong {
     .navbar-nav,
     .nav-link,
     .navbar-brand {
-      color: rgba(255, 255, 255, 0.8);
+      color: $white;
     }
   }
 
@@ -577,7 +682,7 @@ strong {
   }
 
   .theme-button {
-    color: white;
+    color: $white;
   }
 
   .custom-btn-bg:hover {
@@ -585,7 +690,7 @@ strong {
   }
 
   .mat-card {
-    color: white;
+    color: $white;
     background-color: $black-l-20;
   }
 
@@ -605,8 +710,19 @@ strong {
     background-color: $black-l-40;
   }
 
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    color: $white;
+    background: $black-l-20;
+  }
+
+  .contact-form input[type="submit"] {
+    background: darken($color: $light-main, $amount: 20);
+  }
+
   #footer {
-    color: white;
+    color: $white;
     background-color: $black-l-20;
     #heart {
       color: $light-main;
@@ -632,6 +748,19 @@ strong {
 
   .text-in-card {
     width: 85%;
+  }
+
+  .col2 {
+    width: 100%;
+    display: block;
+  }
+
+  .col2.first {
+    margin-bottom: 10px;
+  }
+
+  .col2.column2 {
+    padding: 0;
   }
 }
 
@@ -664,6 +793,18 @@ strong {
   .full-screen {
     padding: 4rem 0;
   }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    padding: 9px;
+    margin: 6px 0;
+  }
+
+  .contact-form input[type="submit"] {
+    padding: 7px 35%;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 580px) {
@@ -679,6 +820,7 @@ strong {
     display: block;
     margin: 10px 0;
   }
+
   .text-in-card {
     width: 90%;
     font-size: 16px;
