@@ -1,9 +1,9 @@
 /* =================== HELPERS =================== */
-function _(x) {
+function q(x) {
   return document.querySelector(x);
 }
 
-function __(x) {
+function qA(x) {
   return document.querySelectorAll(x);
 }
 
@@ -64,8 +64,8 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     var currentWindowPos =
       document.documentElement.scrollTop || document.body.scrollTop;
     currentWindowPos > 0
-      ? _("#navbar").classList.add("scrolled")
-      : _("#navbar").classList.remove("scrolled");
+      ? q("#navbar").classList.add("scrolled")
+      : q("#navbar").classList.remove("scrolled");
   };
 
   /* =================== THEME =================== */
@@ -88,45 +88,45 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   }
 
   function dark() {
-    _(".navbar").style.transition = "none";
-    _("body").classList.add("dark-mode");
-    __(".sun").forEach(function (element) {
+    q(".navbar").style.transition = "none";
+    q("body").classList.add("dark-mode");
+    qA(".sun").forEach(function (element) {
       element.style.display = "inline";
     });
-    __(".moon").forEach(function (element) {
+    qA(".moon").forEach(function (element) {
       element.style.display = "none";
     });
-    __(".svg-dark").forEach(function (element) {
+    qA(".svg-dark").forEach(function (element) {
       element.style.display = "block";
     });
-    __(".svg-light").forEach(function (element) {
+    qA(".svg-light").forEach(function (element) {
       element.style.display = "none";
     });
     localStorage.setItem("theme", "dark");
     setTimeout(() => {
-      _(".navbar").style.transition =
+      q(".navbar").style.transition =
         "background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease";
     }, 0.5); // Wait for animation to complete
   }
 
   function light() {
-    _(".navbar").style.transition = "none";
-    _("body").classList.remove("dark-mode");
-    __(".sun").forEach(function (element) {
+    q(".navbar").style.transition = "none";
+    q("body").classList.remove("dark-mode");
+    qA(".sun").forEach(function (element) {
       element.style.display = "none";
     });
-    __(".moon").forEach(function (element) {
+    qA(".moon").forEach(function (element) {
       element.style.display = "inline";
     });
-    __(".svg-dark").forEach(function (element) {
+    qA(".svg-dark").forEach(function (element) {
       element.style.display = "none";
     });
-    __(".svg-light").forEach(function (element) {
+    qA(".svg-light").forEach(function (element) {
       element.style.display = "block";
     });
     localStorage.setItem("theme", "light");
     setTimeout(() => {
-      _(".navbar").style.transition =
+      q(".navbar").style.transition =
         "background-color 0.2s ease, padding 0.2s ease, box-shadow 0.2s ease";
     }, 0.5); // Wait for animation to complete
   }
@@ -135,7 +135,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
   document.defaultView.addEventListener("storage", theme); // LocalStorage event listener
 
-  __(".theme-button").forEach(function (element) {
+  qA(".theme-button").forEach(function (element) {
     element.addEventListener("click", function () {
       if (_light) {
         dark();
@@ -154,31 +154,31 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     if (isNavOpen) {
       isNavOpen = false;
 
-      _("#side-bar").style.right = "-85vw";
+      q("#side-bar").style.right = "-85vw";
       setTimeout(() => {
-        _("#side-bar").style.display = "none";
+        q("#side-bar").style.display = "none";
       }, 300);
 
-      _("#burger").style.display = "block";
-      _("#close").style.display = "none";
+      q("#burger").style.display = "block";
+      q("#close").style.display = "none";
     } else {
       isNavOpen = true;
 
-      _("#side-bar").style.display = "block";
+      q("#side-bar").style.display = "block";
       setTimeout(() => {
-        _("#side-bar").style.right = "0px";
+        q("#side-bar").style.right = "0px";
       }, 10);
 
-      _("#close").style.display = "block";
-      _("#burger").style.display = "none";
+      q("#close").style.display = "block";
+      q("#burger").style.display = "none";
     }
   }
 
-  __("#side-bar div ul li").forEach(function (el) {
+  qA("#side-bar div ul li").forEach(function (el) {
     el.addEventListener("click", toggleNav);
   });
 
-  _("#menu").addEventListener("click", toggleNav);
+  q("#menu").addEventListener("click", toggleNav);
 
   /* ============== TOOLTIP ============== */
   function tip() {
@@ -211,8 +211,8 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     t.style.marginLeft = `${-halfWidth}px`;
   }
 
-  __(".tipped").forEach(function (element) {
-    element.addEventListener("mouseenter", tip);
-    element.addEventListener("touchstart", tip);
+  qA(".tipped").forEach(function (el) {
+    el.addEventListener("mouseenter", tip);
+    el.addEventListener("touchstart", tip);
   });
 })();
