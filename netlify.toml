@@ -1,0 +1,4 @@
+[build]
+    base = "/"
+    publish = "dist/"
+    functions = "cloud_functions/"

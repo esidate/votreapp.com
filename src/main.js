@@ -1,13 +1,11 @@
+import SmoothScroll from "smooth-scroll";
+
 /* =================== HELPERS =================== */
-function q(x) {
-  return document.querySelector(x);
-}
+const q = (x) => document.querySelector(x);
 
-function qA(x) {
-  return document.querySelectorAll(x);
-}
+const qA = (x) => document.querySelectorAll(x);
 
-function log(msg, lvl = 1, info = null) {
+const log = (msg, lvl = 1, info = null) => {
   /* msg: debugging message
      lvl: 1 = info, 2 = warning, 3 = error, 4 = fatal
   */
@@ -34,20 +32,16 @@ function log(msg, lvl = 1, info = null) {
     console.log("[Debug-Log] Additional information: ", info);
   }
   console.log("[Debug-Log] =========== END ==========");
-}
-
-function dirname(path) {
-  return path.match(/.*\//);
-}
+};
 
 /* ============ SMOOTH SCROLL =================== */
-var scroll = new SmoothScroll('a[href*="#"]', {
+new SmoothScroll('a[href*="#"]', {
   easing: "easeInOutQuad",
   // header: "[navbar]",
-  offset: function (anchor, toggle) {
-    var anchor = toggle.getAttribute("href");
+  offset: (anchor, toggle) => {
+    const a = toggle.getAttribute("href");
 
-    switch (anchor) {
+    switch (a) {
       case "#home":
         return 0;
       case "#service":
@@ -57,22 +51,19 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     }
   },
 });
-
-(function () {
+window.addEventListener("DOMContentLoaded", () => {
   /* =================== HEADER =================== */
-  window.onscroll = function () {
-    var currentWindowPos =
-      document.documentElement.scrollTop || document.body.scrollTop;
-    currentWindowPos > 0
+  window.onscroll = () => {
+    (document.documentElement.scrollTop || document.body.scrollTop) > 0
       ? q("#navbar").classList.add("scrolled")
       : q("#navbar").classList.remove("scrolled");
   };
 
   /* =================== THEME =================== */
-  var _light = true;
+  let _light = true;
 
   function theme() {
-    var theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme");
 
     if (theme === "dark") {
       _light = false;
@@ -135,8 +126,8 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
   document.defaultView.addEventListener("storage", theme); // LocalStorage event listener
 
-  qA(".theme-button").forEach(function (element) {
-    element.addEventListener("click", function () {
+  qA(".theme-button").forEach((el) =>
+    el.addEventListener("click", () => {
       if (_light) {
         dark();
         _light = false;
@@ -144,11 +135,11 @@ var scroll = new SmoothScroll('a[href*="#"]', {
         light();
         _light = true;
       }
-    });
-  });
+    })
+  );
 
   /* =================== MOBILE NAVBAR =================== */
-  var isNavOpen = false;
+  let isNavOpen = false;
 
   function toggleNav() {
     if (isNavOpen) {
@@ -174,7 +165,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     }
   }
 
-  qA("#side-bar div ul li").forEach(function (el) {
+  qA("#side-bar div ul li").forEach((el) => {
     el.addEventListener("click", toggleNav);
   });
 
@@ -182,7 +173,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 
   /* ============== TOOLTIP ============== */
   function tip() {
-    var t = this.querySelector(".tt");
+    let t = this.querySelector(".tt");
     if (t === null) {
       t = document.createElement("div");
       t.classList.add("tt");
@@ -191,22 +182,22 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     }
 
     // Optional direction
-    var dir = this.getAttribute("tt-dir");
+    const dir = this.getAttribute("tt-dir");
     if (dir && dir === "bottom") {
       t.classList.add("tt-bottom");
     }
 
     // Optional event call
-    var onHover = this.getAttribute("onhover");
-    var hasOnHover = onHover && onHover in window;
+    const onHover = this.getAttribute("onhover");
+    const hasOnHover = onHover && onHover in window;
     if (hasOnHover && typeof window[onHover] === "function") {
       window[onHover].call(this);
     }
 
     t.innerHTML = this.getAttribute("tt") || "";
 
-    var width = t.offsetWidth;
-    var halfWidth = width / 2;
+    const width = t.offsetWidth;
+    const halfWidth = width / 2;
     // t.setAttribute('radius', halfWidth);
     t.style.marginLeft = `${-halfWidth}px`;
   }
@@ -215,4 +206,4 @@ var scroll = new SmoothScroll('a[href*="#"]', {
     el.addEventListener("mouseenter", tip);
     el.addEventListener("touchstart", tip);
   });
-})();
+});

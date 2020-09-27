@@ -10,8 +10,8 @@ $font-weight-bold: bold;
 $font-weight-normal: normal;
 $font-weight-light: 300;
 
-$text-white: #ffffff;
-$dark-mode-color: #252525;
+$white: #ffffff;
+$dark: #252525;
 $main-color: #adcaff;
 
 $light-main: #8de2a2;
@@ -61,6 +61,13 @@ $link-font-size: 16px;
   transition: all 0.4s ease;
 }
 
+::-moz-selection {
+  background: transparentize($color: $dark, $amount: 0.75);
+}
+::selection {
+  background: transparentize($color: $dark, $amount: 0.75);
+}
+
 body {
   font-family: $font-base;
   background-color: $white-d-2;
@@ -93,7 +100,7 @@ ul {
 }
 
 a {
-  color: lighten($color: $dark-mode-color, $amount: 5) !important;
+  color: lighten($color: $dark, $amount: 5) !important;
   font-size: $link-font-size;
   font-weight: $font-weight-normal;
   text-decoration: none !important;
@@ -200,7 +207,7 @@ strong {
   top: -100px;
 }
 
-.vertical-wave-dekstop,
+.vertical-wave-desktop,
 .horizontal-wave-desktop {
   position: absolute;
   svg {
@@ -209,7 +216,7 @@ strong {
   }
 }
 
-.vertical-wave-dekstop {
+.vertical-wave-desktop {
   left: -50px;
   top: 0px;
 }
@@ -231,10 +238,10 @@ strong {
 
   &.custom-btn-bg {
     background: $button-color;
-    color: $text-white;
+    color: $white;
     &:hover {
       background: $dark-main;
-      color: $text-white !important;
+      color: $white !important;
     }
   }
 }
@@ -248,9 +255,11 @@ strong {
 }
 /* ============ CARD =============== */
 .mat-card {
+  display: flex;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
   border-radius: 3px;
   width: 100%;
+  min-height: 325px;
   background-color: white;
 }
 .text-in-card {
@@ -483,7 +492,13 @@ strong {
 }
 
 .dark-mode {
-  background: $dark-mode-color;
+  background: $dark;
+  ::-moz-selection {
+    background: transparentize($color: $white, $amount: 0.75);
+  }
+  ::selection {
+    background: transparentize($color: $white, $amount: 0.75);
+  }
 
   h1,
   h2,
@@ -491,7 +506,7 @@ strong {
   h4,
   h5,
   h6 {
-    color: $text-white;
+    color: $white;
   }
 
   a {
@@ -514,7 +529,7 @@ strong {
     }
   }
 
-  .vertical-wave-dekstop,
+  .vertical-wave-desktop,
   .horizontal-wave-desktop {
     svg {
       fill: darken($color: adjust-hue($light-main, 15deg), $amount: 25);
@@ -602,7 +617,7 @@ strong {
 /* ============ RESPONSIVENESS =========== */
 
 @media (max-width: 1199px) {
-  .vertical-wave-dekstop {
+  .vertical-wave-desktop {
     left: -170px;
   }
   .vertical-wave-web {
