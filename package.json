@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --mode development --open --content-base src --hot --config webpack.dev.js",
     "start": "webpack --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "netlify-lambda install"
   },
   "repository": {
     "type": "git",
