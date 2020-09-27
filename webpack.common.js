@@ -47,7 +47,7 @@ module.exports = {
       title: "VotreApp - Development And Consulting",
       template: "./src/index.html",
       filename: "index.html",
-      favicon: "", // TODO : Add a favicon
+      favicon: "./src/icon.svg", // TODO : Add a favicon
       meta: metaData,
       minify: {
         collapseWhitespace: true,

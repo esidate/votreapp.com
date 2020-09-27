@@ -1,4 +1,5 @@
 [build]
+    command = "npm run build"
     base = "/"
     publish = "dist/"
-    functions = "cloud_functions/"
+    functions = "lambda/"
