@@ -264,14 +264,12 @@ strong {
 
 /* =========== CUSTOM BUTTON =========== */
 .custom-btn {
-  font-weight: $font-weight-bold;
-  padding: 4px 29px 5px 29px;
-  font-size: $small-font-size;
+  padding: 10px 29px;
   line-height: normal;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.23);
   @include transition-effect;
-
   &.custom-btn-bg {
     background: $button-color;
     color: $white;
@@ -815,6 +813,10 @@ strong {
     padding: 7px 35%;
     font-size: 14px;
   }
+  .custom-btn {
+    margin: auto;
+    width: 75%;
+  }
 }
 
 @media (max-width: 580px) {
@@ -828,7 +830,8 @@ strong {
 
   .custom-btn {
     display: block;
-    margin: 10px 0;
+    margin: 10px auto;
+    width: 90%;
   }
 
   .text-in-card {
