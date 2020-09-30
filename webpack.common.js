@@ -6,9 +6,9 @@ const path = require("path");
 
 module.exports = {
   entry: [
-    "./src/main.js",
-    "./src/style/bootstrap.min.css",
-    "./src/style/style.scss",
+    path.resolve(__dirname, "src", "main.js"),
+    path.resolve(__dirname, "src", "style", "bootstrap.min.css"),
+    path.resolve(__dirname, "src", "style", "style.scss"),
   ],
   output: {
     filename: "[name].bundle.js",
@@ -45,9 +45,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "VotreApp - Development And Consulting",
-      template: "./src/index.html",
+      template: path.resolve(__dirname, "src", "index.html"),
       filename: "index.html",
-      favicon: "./src/icon.svg", // TODO : Add a favicon
+      favicon: path.resolve(__dirname, "src", "icon.svg"), // TODO : Add a favicon
       meta: metaData,
       minify: {
         collapseWhitespace: true,

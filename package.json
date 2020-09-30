@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --content-base src --hot --config webpack.dev.js",
+    "dev": "./dev.sh",
+    "bootstrap": "netlify dev:exec node ./scripts/bootstrap-fauna-database.js",
+    "serve:front": "webpack-dev-server --mode development --open --content-base src --hot --config webpack.dev.js",
+    "serve:back": "netlify-lambda serve ./src --config webpack.functions.js",
     "start": "webpack --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && netlify-lambda build ./src --config webpack.functions.js",
     "postinstall": "netlify-lambda install"
   },
   "repository": {
@@ -29,6 +32,8 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.1.1",
     "css-loader": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "faunadb": "^3.0.1",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^0.11.2",
     "netlify-lambda": "^2.0.1",

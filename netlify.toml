@@ -3,3 +3,5 @@
     base = "/"
     publish = "dist/"
     functions = "lambda"
+[dev]
+    functions = "lambda"
