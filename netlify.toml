@@ -2,6 +2,6 @@
     command = "npm run build"
     base = "/"
     publish = "dist/"
-    functions = "lambda"
+    functions = "functions"
 [dev]
-    functions = "lambda"
+    functions = "functions"

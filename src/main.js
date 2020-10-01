@@ -1,4 +1,5 @@
 import SmoothScroll from "smooth-scroll";
+const axios = require("axios").default;
 
 /* =================== HELPERS =================== */
 const q = (x) => document.querySelector(x);
@@ -219,3 +220,18 @@ window.addEventListener("DOMContentLoaded", () => {
     el.addEventListener("touchstart", tip);
   });
 });
+
+window.sendContact = function () {
+  axios
+    .post("/.netlify/functions/contact", {
+      body: JSON.stringify({
+        habi: "test",
+      }),
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+};

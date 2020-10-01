@@ -292,7 +292,7 @@
           </div>
 
           <div class="contact-form">
-            <form name="contact" method="POST" data-netlify="true">
+            <div name="contact">
               <div class="clearfix">
                 <input class="col2 first" type="text" name="first-name" placeholder="First Name" spellcheck="false"
                   required>
@@ -308,8 +308,11 @@
                 <textarea name="textarea" id="contact-form-textarea" cols="35" name="message" rows="7" placeholder="Message" required
                   data-simplebar></textarea>
               </div>
-              <div class="clearfix"><input type="submit" value="Send"></div>
-            </form>
+              <div class="clearfix">
+                <button onclick="sendContact()" id="send">Send</button>
+                <!-- <input type="submit" value="Send" onclick="sendContact()" id="send"> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>

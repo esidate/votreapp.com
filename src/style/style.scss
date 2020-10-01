@@ -497,7 +497,7 @@ strong {
   // resize: none;
 }
 
-.contact-form input[type="submit"] {
+.contact-form #send {
   padding: 6px 100px 7px 100px;
   color: $white;
   border: 0;
@@ -725,7 +725,7 @@ strong {
     background: $black-l-20;
   }
 
-  .contact-form input[type="submit"] {
+  .contact-form #send {
     background: darken($color: $light-main, $amount: 20);
   }
 
@@ -809,7 +809,7 @@ strong {
     margin: 6px 0;
   }
 
-  .contact-form input[type="submit"] {
+  .contact-form #send {
     padding: 7px 35%;
     font-size: 14px;
   }
