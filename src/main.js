@@ -1,39 +1,40 @@
 import SmoothScroll from "smooth-scroll";
-const axios = require("axios").default;
+import axios from "axios";
+import "@material/mwc-snackbar";
 
 /* =================== HELPERS =================== */
 const q = (x) => document.querySelector(x);
 
 const qA = (x) => document.querySelectorAll(x);
 
-const log = (msg, lvl = 1, info = null) => {
-  /* msg: debugging message
-     lvl: 1 = info, 2 = warning, 3 = error, 4 = fatal
-  */
-  switch (lvl) {
-    case 1:
-      var color = "color:green";
-      break;
-    case 2:
-      var color = "color:yellow";
-      break;
-    case 3:
-      var color = "color:orange";
-      break;
-    case 4:
-      var color = "color:red";
-      break;
-    default:
-      var color = "color:green";
-      break;
-  }
-  console.log("[Debug-Log] =========== START ==========");
-  console.log("[Debug-Log] Message: %c%s", color, msg);
-  if (!!info) {
-    console.log("[Debug-Log] Additional information: ", info);
-  }
-  console.log("[Debug-Log] =========== END ==========");
-};
+// const log = (msg, lvl = 1, info = null) => {
+//   /* msg: debugging message
+//      lvl: 1 = info, 2 = warning, 3 = error, 4 = fatal
+//   */
+//   switch (lvl) {
+//     case 1:
+//       var color = "color:green";
+//       break;
+//     case 2:
+//       var color = "color:yellow";
+//       break;
+//     case 3:
+//       var color = "color:orange";
+//       break;
+//     case 4:
+//       var color = "color:red";
+//       break;
+//     default:
+//       var color = "color:green";
+//       break;
+//   }
+//   console.log("[Debug-Log] =========== START ==========");
+//   console.log("[Debug-Log] Message: %c%s", color, msg);
+//   if (!!info) {
+//     console.log("[Debug-Log] Additional information: ", info);
+//   }
+//   console.log("[Debug-Log] =========== END ==========");
+// };
 
 window.addEventListener("DOMContentLoaded", () => {
   /* ================= CUSTOM SCROLL ============== */
@@ -221,17 +222,75 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+window.snackbar = q("#snackbar");
+
 window.sendContact = function () {
+  const value = (name, type = "input") => {
+    const element = q(`${type}[name = "${name}"]`);
+    return !!element ? element.value : "";
+  };
+
+  const send = (obj) => {
+    axios
+      .post("/.netlify/functions/contact_us/contact_us", obj)
+      .then(function (response) {
+        console.log(response);
+        if (response && response.data) {
+          if (response.data.success) {
+            snackbar.setAttribute(
+              "labelText",
+              "Your message has been submitted"
+            );
+            q("#contact-form").reset();
+          } else {
+            snackbar.setAttribute(
+              "labelText",
+              "Something went wrong please try again later"
+            );
+          }
+        }
+        snackbar.show();
+      })
+      .catch(function (error) {
+        console.log(error);
+        snackbar.setAttribute(
+          "labelText",
+          "Something went wrong please try again later"
+        );
+        snackbar.show();
+      });
+  };
+
+  const obj = {
+    fname: value("fname"),
+    lname: value("lname"),
+    email: value("email"),
+    phone: value("phone"),
+    message: value("message", "textarea"),
+    date: new Date().toString(),
+    ip: "",
+    loc: "",
+    uag: "",
+  };
+
   axios
-    .post("/.netlify/functions/contact", {
-      body: JSON.stringify({
-        habi: "test",
-      }),
-    })
+    .get("https://www.cloudflare.com/cdn-cgi/trace") // Get IP, Location, Browser/OS
     .then(function (response) {
-      console.log(response);
+      if (
+        typeof response.data === "string" ||
+        response.data instanceof String
+      ) {
+        const userInfo = response.data.split(/\r?\n/);
+        obj.ip = userInfo.length > 0 ? userInfo[2].match(/\=(.*)/)[1] : "";
+        obj.loc = userInfo.length > 0 ? userInfo[8].match(/\=(.*)/)[1] : "";
+        obj.uag = userInfo.length > 0 ? userInfo[5].match(/\=(.*)/)[1] : "";
+      }
+      send(obj); // Send new object
     })
     .catch(function (error) {
-      console.log(error);
+      console.log("CloudFlare response error", error);
+      send(obj); // Send object anyway
     });
+
+  return false;
 };

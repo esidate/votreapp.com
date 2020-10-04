@@ -10,6 +10,7 @@ module.exports = merge(common, {
     contentBase: path.resolve(__dirname, "dist"),
     watchContentBase: true,
     compress: true,
+    port: 32165
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 });

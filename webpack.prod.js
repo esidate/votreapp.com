@@ -5,6 +5,7 @@ const TerserJSPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const common = require("./webpack.common.js");
 const { merge } = require("webpack-merge");
+const path = require("path");
 
 module.exports = merge(common, {
   mode: "production",
@@ -18,7 +19,18 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     new MinifyPlugin(),
     new CopyPlugin({
-      patterns: [{ from: "src/img", to: "img" }],
+      patterns: [
+        { from: "src/img", to: "img" },
+        {
+          from: path.resolve(__dirname, "robots.txt"),
+        },
+        {
+          from: path.resolve(__dirname, "CNAME"),
+        },
+        {
+          from: path.resolve(__dirname, "sitemap.xml"),
+        },
+      ],
     }),
   ],
 });

@@ -1,15 +1,15 @@
-Run:
+# <div align="center">VotreApp<div align="center">
 
-**npm install**
+### Run:
 
-For dev mode run:
+`npm install`
 
-**npm run dev**
+`npm run dev` _[Serves lambda functions and front-end (hot reloading)]_
 
-_note: if you get permission errors run **chmod +x dev.sh**_
+**To serve the front-end only**
 
-To build the app run:
+`npm run serve`
 
-**npm run build**
+**To build the app run**
 
-the generated bundles can be found in **./dist**
+`npm run build`

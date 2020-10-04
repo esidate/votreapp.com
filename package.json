@@ -4,13 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "npm-run-all --parallel serve:**",
+    "dev": "netlify dev",
     "build": "npm-run-all --parallel build:**",
-    "serve:front": "webpack-dev-server --mode development --open --content-base src --hot --config webpack.dev.js",
-    "serve:back": "netlify-lambda serve ./src --config webpack.functions.js",
+    "serve": "webpack-dev-server --mode development --content-base src --hot --config webpack.dev.js",
     "build:front": "webpack --config webpack.prod.js",
-    "build:back": "netlify-lambda build ./src --config webpack.functions.js",
-    "bootstrap": "node ./scripts/bootstrap-faunadb.js",
+    "build:back": "netlify-lambda build ./src",
     "start": "webpack --open --config webpack.dev.js",
     "postinstall": "netlify-lambda install"
   },
@@ -61,9 +59,12 @@
     "webpack-merge": "^5.1.4"
   },
   "dependencies": {
+    "@exodus/schemasafe": "^1.0.0-rc.2",
+    "@material/mwc-snackbar": "^0.18.0",
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "faunadb": "^3.0.1",
+    "sendmail": "^1.6.1",
     "smooth-scroll": "^16.1.3"
   }
 }

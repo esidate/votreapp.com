@@ -157,6 +157,10 @@ a {
   cursor: pointer;
 }
 
+mwc-snackbar {
+  text-align: center !important;
+}
+
 /* ============ TYPO =========== */
 
 p {
@@ -479,10 +483,10 @@ strong {
   padding: 0 30px;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  padding: 12px;
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  padding: 10px;
   border: 0;
   border-radius: 3px;
   background: $white;
@@ -490,14 +494,14 @@ strong {
   margin: 7px 0;
 }
 
-.contact-form textarea {
+#contact-form textarea {
   width: 100%;
   display: block;
   min-height: 160px;
   // resize: none;
 }
 
-.contact-form #send {
+#contact-form #send {
   padding: 6px 100px 7px 100px;
   color: $white;
   border: 0;
@@ -508,6 +512,9 @@ strong {
   margin: 7px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.23);
   cursor: pointer;
+  &:hover {
+    background: lighten($color: $dark-main, $amount: 5);
+  }
 }
 
 /* ================ FOOTER =============== */
@@ -718,22 +725,26 @@ strong {
     background-color: $black-l-40;
   }
 
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form textarea {
+  #contact-form input[type="text"],
+  #contact-form input[type="email"],
+  #contact-form textarea {
     color: $white;
     background: $black-l-20;
   }
 
-  .contact-form #send {
-    background: darken($color: $light-main, $amount: 20);
+  #contact-form #send {
+    background: darken($color: $dark-main, $amount: 5);
+    box-shadow: none;
+    &:hover {
+      background: $dark-main;
+    }
   }
 
   #footer {
     color: $white;
     background-color: $black-l-20;
     #heart {
-      color: $light-main;
+      color: $dark-main;
     }
   }
 }
@@ -802,14 +813,14 @@ strong {
     padding: 4rem 0;
   }
 
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form textarea {
+  #contact-form input[type="text"],
+  #contact-form input[type="email"],
+  #contact-form textarea {
     padding: 9px;
     margin: 6px 0;
   }
 
-  .contact-form #send {
+  #contact-form #send {
     padding: 7px 35%;
     font-size: 14px;
   }

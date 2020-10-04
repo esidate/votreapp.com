@@ -21,8 +21,8 @@
     <div id="bar" class="d-flex justify-content-between justify-items-center w-100 p-1">
       <i class="d-none d-lg-flex" style="width: 2vw"></i>
 
-      <a class="navbar-brand mx-3" href=""><span class="iconify h1" data-icon="uil:laptop-cloud"
-          data-inline="false"></span> VotreApp</a>
+      <a class="navbar-brand mx-3" href=""><span class="iconify" style="font-size: 55px;padding-bottom: 10px;"
+          data-icon="uil:laptop-cloud" data-inline="false"></span> VotreApp</a>
 
       <div class="justify-content-around justify-items-center d-none d-md-flex">
         <ul class="navbar-nav mx-auto">
@@ -291,29 +291,26 @@
             <h1>Contact Us</h1>
           </div>
 
-          <div class="contact-form">
-            <div name="contact">
-              <div class="clearfix">
-                <input class="col2 first" type="text" name="first-name" placeholder="First Name" spellcheck="false"
-                  required>
-                <input class="col2 last" type="text" name="last-name" placeholder="Last Name" spellcheck="false"
-                  required>
-              </div>
-              <div class="clearfix">
-                <input class="col2 first" type="Email" name="email" placeholder="Email" spellcheck="false" required>
-                <input class="col2 last" type="text" name="phone" placeholder="Phone Number (optional)"
-                  spellcheck="false">
-              </div>
-              <div class="clearfix">
-                <textarea name="textarea" id="contact-form-textarea" cols="35" name="message" rows="7" placeholder="Message" required
-                  data-simplebar></textarea>
-              </div>
-              <div class="clearfix">
-                <button onclick="sendContact()" id="send">Send</button>
-                <!-- <input type="submit" value="Send" onclick="sendContact()" id="send"> -->
-              </div>
+          <form id="contact-form" onsubmit="return sendContact()">
+            <div class="clearfix">
+              <input class="col2 first" type="text" name="fname" placeholder="First Name*" spellcheck="false" required>
+              <input class="col2 last" type="text" name="lname" placeholder="Last Name*" spellcheck="false" required>
             </div>
-          </div>
+            <div class="clearfix">
+              <input class="col2 first" type="Email" name="email" placeholder="Email*" spellcheck="false" required>
+              <input class="col2 last" type="text" name="phone" placeholder="Phone Number (optional)"
+                spellcheck="false">
+            </div>
+            <div class="clearfix">
+              <textarea id="contact-form-textarea" cols="35" name="message" rows="7" placeholder="Message*" required
+                data-simplebar></textarea>
+            </div>
+
+            <div class="clearfix">
+              <input type="submit" value="SEND" id="send">
+            </div>
+          </form>
+
         </div>
       </div>
     </div>
@@ -329,6 +326,9 @@
       <span class="ml-2 font-weight-bold">Theme</span>
     </div>
   </div>
+
+  <mwc-snackbar id="snackbar">
+  </mwc-snackbar>
 
 </body>
 

@@ -4,4 +4,9 @@
     publish = "dist/"
     functions = "functions"
 [dev]
+    command = "npm run serve"
+    framework = "#custom"
     functions = "functions"
+    port = 48526
+    targetPort = 32165
+    # autoLaunch = false
