@@ -209,6 +209,22 @@ strong {
   background: transparentize($color: $dark, $amount: 0.7) !important;
 }
 
+.loadingspinner {
+  pointer-events: none;
+  width: 2.5em;
+  height: 2.5em;
+  border: 0.4em solid transparent;
+  border-color: #eee;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: loadingspin 1s linear infinite;
+}
+
+@keyframes loadingspin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /* ============ WAVE BACKGROUND =========== */
 
 #wave {
