@@ -93,6 +93,10 @@ $link-font-size: 16px;
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none !important;
+}
+
 body {
   font-family: $font-base;
   background-color: $white-d-5;
@@ -211,10 +215,10 @@ strong {
 
 .loadingspinner {
   pointer-events: none;
-  width: 2.5em;
-  height: 2.5em;
-  border: 0.4em solid transparent;
-  border-color: #eee;
+  width: 17px;
+  height: 17px;
+  border: 2px solid transparent;
+  border-color: $light-main;
   border-top-color: white;
   border-radius: 50%;
   animation: loadingspin 1s linear infinite;

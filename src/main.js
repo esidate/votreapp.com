@@ -231,6 +231,8 @@ window.sendContact = function () {
   };
 
   const send = (obj) => {
+    q("#send-button").style.display = "none";
+    q("#sending-button").style.display = "flex";
     axios
       .post("/.netlify/functions/contact_us/contact_us", obj)
       .then(function (response) {
@@ -249,6 +251,8 @@ window.sendContact = function () {
             );
           }
         }
+        q("#send-button").style.display = "block";
+        q("#sending-button").style.display = "none";
         snackbar.show();
       })
       .catch(function (error) {
@@ -257,6 +261,8 @@ window.sendContact = function () {
           "labelText",
           "Something went wrong please try again later"
         );
+        q("#send-button").style.display = "block";
+        q("#sending-button").style.display = "none";
         snackbar.show();
       });
   };

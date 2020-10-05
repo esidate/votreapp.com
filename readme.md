@@ -1,10 +1,10 @@
-# <div align="center">VotreApp<div align="center">
+# <div align="center">VotreApp<div>
 
 ### Run:
 
 `npm install`
 
-`npm run dev` _[Serves lambda functions and front-end (hot reloading)]_
+`npm run dev` _(Start HRM dev-server for lambda functions and front-end)_
 
 **To serve the front-end only**
 
@@ -13,3 +13,7 @@
 **To build the app run**
 
 `npm run build`
+
+### <div align="center">App architecture</div>
+
+![image](./figures/cloudcraft.png)

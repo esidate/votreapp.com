@@ -307,7 +307,12 @@
             </div>
 
             <div class="clearfix">
-              <button type="submit" id="send">SEND</button>
+              <button type="submit" id="send">
+                <span id="send-button">SEND</span>
+                <span style="display: none;" id="sending-button">
+                  SENDING <i class="loadingspinner ml-3 mt-1"></i>
+                </span>
+              </button>
             </div>
           </form>
 

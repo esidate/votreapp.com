@@ -64,7 +64,8 @@
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "faunadb": "^3.0.1",
-    "sendmail": "^1.6.1",
+    "node-json2html": "^1.4.0",
+    "node-mailjet": "^3.3.1",
     "smooth-scroll": "^16.1.3"
   }
 }
