@@ -36,9 +36,6 @@ const template = {
 exports.handler = (event, context, callback) => {
   const data = JSON.parse(event.body);
 
-  console.log(json2html.transform(data, template));
-
-  return;
   if (validate(data)) {
     return client
       .query(q.Create(q.Collection("contact"), { data: data })) // Save form data to FaunaDB
