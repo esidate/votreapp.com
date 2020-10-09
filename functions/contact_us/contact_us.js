@@ -1,5 +1,6 @@
 const sendMail = require("../modules/mail"); // MailJet mailer function
 const validate = require("./validation"); // JSON schema validator
+const template = require("./template"); // JSON schema validator
 
 const json2html = require("node-json2html");
 const faunadb = require("faunadb");
@@ -17,21 +18,6 @@ const resp = (success, message) =>
     success,
     message,
   });
-
-const template = {
-  "<>": "ul",
-  html: [
-    { "<>": "li", html: "First name: ${fname}" },
-    { "<>": "li", html: "Last name: ${lname}" },
-    { "<>": "li", html: "Email: ${email}" },
-    { "<>": "li", html: "Phone: ${phone}" },
-    { "<>": "li", html: "Message: ${message}" },
-    { "<>": "li", html: "Date: ${date}" },
-    { "<>": "li", html: "Browser/OS: ${uag}" },
-    { "<>": "li", html: "Location: ${loc}" },
-    { "<>": "li", html: "IP: ${ip}" },
-  ],
-};
 
 exports.handler = (event, context, callback) => {
   const data = JSON.parse(event.body);
