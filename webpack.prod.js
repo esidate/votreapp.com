@@ -30,6 +30,9 @@ module.exports = merge(common, {
         {
           from: path.resolve(__dirname, "sitemap.xml"),
         },
+        {
+          from: path.resolve(__dirname, "a49add6e9098e932cf92ac3966a6c71f.txt"),
+        },
       ],
     }),
   ],
