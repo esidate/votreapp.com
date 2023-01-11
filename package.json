@@ -60,12 +60,12 @@
   },
   "dependencies": {
     "@exodus/schemasafe": "^1.0.0-rc.2",
-    "@material/mwc-snackbar": "^0.18.0",
     "axios": "^0.27.2",
+    "@material/mwc-snackbar": "^0.27.0",
     "dotenv": "^8.2.0",
     "faunadb": "^3.0.1",
     "node-json2html": "^1.4.0",
-    "node-mailjet": "^3.3.1",
+    "node-mailjet": "^3.3.4",
     "smooth-scroll": "^16.1.3"
   }
 }
